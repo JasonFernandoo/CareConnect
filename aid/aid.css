@@ -1,0 +1,44 @@
+:root {
+    --color-1: #2E2B2B;
+    --color-2: #388186;
+    --color-3: #A5E9E1;
+    --color-4: #FDF6F6;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: var(--color-4);
+}
+
+.back {
+    margin-top: 30px;
+}
+
+.back button {
+    color: var(--color-1);
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    font-size: 20px;
+    font-weight: bold;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.search {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.search input {
+    margin-top: 10px;
+    height: 50px;
+    width: 85%;
+    background-color: #EAEAEA;
+    border-radius: 5px;
+    border: none;
+    padding: 5px;
+}

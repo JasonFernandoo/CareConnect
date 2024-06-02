@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="mass.css">
+    <title>CareConnect</title>
+</head>
+<body>
+    <div class="container">
+        <div class="back">
+            <button onclick="window.location.href='../main.html'">< Mass accident help</button>
+        </div>
+        <div class="form">
+            <form>
+                <label for="location">Location</label>
+                <input type="text" id="location" name="location" placeholder="Enter location">
+                <label for="type">Estimated casualty</label>
+                <select id="type" name="type">
+                    <option value="" disabled selected>Enter the number of people</option>
+                    <option value="type1">Type 1</option>
+                    <option value="type2">Type 2</option>
+                    <option value="type3">Type 3</option>
+                </select>
+                <label for="note">Emergency Type</label>
+                <textarea id="note" rows="4" cols="50" placeholder="Describe the incident..."></textarea>
+                <button class="submit" type="button">Submit</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
