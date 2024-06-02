@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CareConnect</title>
     <link rel="stylesheet" href="aid.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 <body>
     <div class="container">
@@ -12,8 +13,32 @@
             <button onclick="window.location.href='../main.html'">< First aid method</button>
         </div>
         <div class="search">
-            <input type="text" placeholder="Type to Search">
+            <input id="search-input" type="text" placeholder="Type to Search">
+            <button class="search-button" onclick="searchYoutube()">Search</button>
         </div>
+        <div id="results"></div>
     </div>
+
+    <script>
+        function searchYoutube() {
+            var searchQuery = $('#search-input').val();
+            var apiKey = 'AIzaSyA-owwRYm1ZlsQ0m3kaq-WoNdDB4pEXY70'; 
+
+            $.get("https://www.googleapis.com/youtube/v3/search", {
+                part: 'snippet',
+                maxResults: 20,
+                q: searchQuery,
+                type: 'video',
+                key: apiKey
+            }, function(data) {
+                $.each(data.items, function(i, item) {
+                    var videoId = item.id.videoId;
+                    var title = item.snippet.title;
+                    var videoEmbedLink = 'https://www.youtube.com/embed/' + videoId;
+                    $('#results').append('<div><h3>' + title + '</h3><iframe width="560" height="315" src="' + videoEmbedLink + '" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>');
+                });
+            });
+        }
+    </script>
 </body>
 </html>

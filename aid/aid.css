@@ -36,9 +36,30 @@ body {
 .search input {
     margin-top: 10px;
     height: 50px;
-    width: 85%;
+    width: 90%;
     background-color: #EAEAEA;
     border-radius: 5px;
     border: none;
     padding: 5px;
+
+    z-index: 5;
+}
+
+.search-button {
+    height: 50px;
+    border-radius: 5px;
+    border: none;
+    background-color: transparent;
+    z-index: 10;
+    margin-top: 10px;
+    margin-left: -55px;
+}
+
+#results iframe {
+    max-width: 370px;
+    width: 100%;
+    height: auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
