@@ -1,0 +1,238 @@
+:root {
+  --color-1: #2E2B2B;
+  --color-2: #388186;
+  --color-3: #A5E9E1;
+  --color-4: #FDF6F6;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  height: 100vh;
+  width: 100%;
+  background-color: var(--color-4);
+}
+
+.header {
+  height: 160px;
+  width: 100%;
+  position: fixed;
+  background-color: var(--color-4);
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
+}
+
+.header-atas {
+  margin-top: 30px;
+  height: 50px;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 2.2fr 1fr;
+}
+
+.atas-kiri {
+  width: 190px;
+  height: 50px;
+  align-items: center;
+  display: grid;
+  grid-template-columns: 0.5fr 1fr;
+}
+
+.atas-kiri p {
+  font-size: 14px;
+}
+
+.atas-kanan {
+  margin-top: -3px;
+  width: 145px;
+  height: 50px;
+  align-items: center;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+.profile {
+  height: 35px;
+  width: 35px;
+  border-radius: 20px;
+  margin-left: 15px;
+  background-color: var(--color-2);
+}
+
+.header-bawah {
+  height: 60px;
+  width: 100%;
+  padding: 5px;
+  justify-self: center;
+  align-items: center;
+}
+
+.header-bawah input {
+  height: 50px;
+  width: 90%;
+  margin-left: 10px;
+  border-radius: 5px;
+  border: none;
+  padding: 5px;
+}
+
+.main-project {
+  height: 100%;
+  width: 100%;
+}
+
+.button {
+  width: 90%;
+  height: 250px;
+  position: fixed;
+  margin-top: 180px;
+  margin-left: 20px;
+}
+
+.button-atas {
+  height: 130px;
+  width: 100%;
+  display: flex;
+  border-radius: 20px;
+  align-items: center;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.button-atas button {
+  height: 100%;
+  width: 100%;
+  color: white;
+  text-align: left;
+  font-size: 18px;
+  font-weight: bold;
+  padding-left: 30px;
+  border-radius: 20px;
+  background-color: var(--color-2);
+  border: none;
+}
+
+.button-bawah {
+  margin-top: 20px;
+  height: 100px;
+  width: 100%;
+  display: grid;
+  gap: 20px;
+  grid-template-columns: 1fr 1fr;
+}
+
+.button-kiri {
+  height: 100px;
+  width: 100%;
+  border-radius: 20px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.button-kiri button {
+  height: 100%;
+  width: 100%;
+  color: white;
+  text-align: left;
+  font-size: 17px;
+  font-weight: bold;
+  padding-left: 20px;
+  border-radius: 20px;
+  background-color: var(--color-3);
+  border: none;
+}
+
+.button-kanan {
+  height: 100px;
+  width: 100%;
+  border-radius: 20px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.button-kanan button {
+  height: 100%;
+  width: 100%;
+  color: white;
+  text-align: left;
+  font-size: 17px;
+  font-weight: bold;
+  padding-left: 20px;
+  border-radius: 20px;
+  background-color: var(--color-3);
+  border: none;
+}
+
+.emergency {
+  width: 90%;
+  height: 150px;
+  position: fixed;
+  margin-top: 450px;
+  margin-left: 20px;
+  border-top : 1px solid black;
+  border-bottom : 1px solid black;
+  font-weight: bold;
+}
+
+.emergency-grid {
+  height: 50%;
+  width: 100%;
+  display: grid;
+  gap: 20px;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+.emergency-grid button {
+  height: 100%;
+  width: 100%;
+  color: white;
+  text-align: left;
+  font-size: 14px;
+  font-weight: bold;
+  padding-left: 10px;
+  border-radius: 20px;
+  background-color: var(--color-2);
+  border: none;
+}
+
+.grid-1 {
+  height: 100%;
+  width: 100%;
+  border-radius: 20px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.grid-2 {
+  height: 100%;
+  width: 100%;
+  border-radius: 20px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.grid-3 {
+  height: 100%;
+  width: 100%;
+  border-radius: 20px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.grid-4 {
+  height: 100%;
+  width: 100%;
+  border-radius: 20px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.map {
+  width: 90%;
+  height: 150px;
+  position: fixed;
+  margin-top: 600px;
+  margin-left: 20px;
+  font-weight: bold;
+}
+
+.map-image {
+  height: 200px;
+  width: 100%;
+  border-radius: 20px 20px 0px 0px;
+  background-color: #BBBBBB;
+}
