@@ -30,6 +30,7 @@ body {
   width: 100%;
   display: grid;
   grid-template-columns: 2.2fr 1fr;
+  color: var(--color-1);
 }
 
 .atas-kiri {
