@@ -17,7 +17,7 @@ body {
 }
 
 .header {
-  height: 160px;
+  height: 130px;
   width: 100%;
   position: fixed;
   background-color: var(--color-4);
@@ -25,7 +25,6 @@ body {
 }
 
 .header-atas {
-  margin-top: 30px;
   height: 50px;
   width: 100%;
   display: grid;
@@ -87,9 +86,9 @@ body {
 
 .button {
   width: 90%;
-  height: 250px;
+  height: 230px;
   position: fixed;
-  margin-top: 180px;
+  margin-top: 150px;
   margin-left: 20px;
 }
 
@@ -168,7 +167,7 @@ body {
   width: 90%;
   height: 150px;
   position: fixed;
-  margin-top: 450px;
+  margin-top: 420px;
   margin-left: 20px;
   border-top : 1px solid black;
   border-bottom : 1px solid black;
@@ -228,7 +227,7 @@ body {
   width: 90%;
   height: 150px;
   position: fixed;
-  margin-top: 600px;
+  margin-top: 570px;
   margin-left: 20px;
   font-weight: bold;
 }
