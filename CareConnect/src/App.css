@@ -70,6 +70,8 @@ body {
 }
 
 .header-bawah input {
+  background-color: white;
+  color: --var(--color-1);
   height: 50px;
   width: 90%;
   margin-left: 10px;
