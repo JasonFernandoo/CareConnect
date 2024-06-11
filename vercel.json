@@ -2,7 +2,7 @@
     "routes": [
         {
             "src": "/[^.]+",
-            "dest": "./careconnect/index.html"
+            "dest": "./index.html"
         }
     ]    
 }
