@@ -1,11 +1,14 @@
 import React from 'react';
 import './Book.css';
+import { useNavigate } from 'react-router-dom';
 
 function Book() {
+    const navigate = useNavigate();
+
     return (
         <div className="container">
             <div className="back">
-                <button onClick={() => window.location.href='../main.html'}>Book and Ambulance</button>
+                <button onClick={() => navigate('/')}>Book an Ambulance</button>            
             </div>
             <div className="form">
                 <form>

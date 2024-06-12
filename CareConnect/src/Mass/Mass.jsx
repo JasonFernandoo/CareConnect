@@ -1,11 +1,13 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import './Mass.css';
 
 function Mass() {
+    const navigate = useNavigate();
     return (
         <div className="container">
             <div className="back">
-                <button onClick={() => window.location.href='../main.html'}>&lt; Mass accident help</button>
+                <button onClick={() => navigate('/')}>Mass Accident</button>
             </div>
             <div className="form">
                 <form>
