@@ -2,7 +2,7 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import './Container.css';
 
-function Container() {
+function Container({ fixedDivFullHeight }) {
     const navigate = useNavigate();
 
     return (
@@ -15,7 +15,9 @@ function Container() {
                     </div>
                     <div className="atas-kanan">
                         <p>Username</p>
-                        <div className="profile"></div>
+                        <div className="profile">
+                            <button onClick={() => navigate('/profile')}></button>
+                        </div>
                     </div>
                 </div>
                 <div className="header-bawah">
@@ -58,6 +60,12 @@ function Container() {
                 <div className="map">
                     <p>Map</p>
                     <div className="map-image"></div>
+                </div>
+                <div className={`fixed-main-div ${fixedDivFullHeight ? 'full-height' : ''}`}>
+                    <div className='fixed-main-atas'>
+                    </div>
+                    <div className='fixed-main-bawah'>
+                    </div>
                 </div>
             </div>
         </div>

@@ -1,9 +1,15 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './Book.css';
 import { useNavigate } from 'react-router-dom';
 
 function Book() {
     const navigate = useNavigate();
+    const [fixedDivFullHeight, setFixedDivFullHeight] = useState(false);
+
+    const handleSubmit = () => {
+        setFixedDivFullHeight(true);
+        navigate('/');
+    };
 
     return (
         <div className="container">
@@ -36,7 +42,7 @@ function Book() {
                             <span>No</span>
                         </label>
                     </div>
-                    <button className="submit" type="button">Submit</button>
+                    <button className="submit" type="button" onClick={handleSubmit}>Submit</button>
                 </form>
             </div>
         </div>
