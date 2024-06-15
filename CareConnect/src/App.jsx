@@ -7,12 +7,10 @@ import Aid from './Aid/Aid';
 import Profile from './Profile/Profile';
 
 function App() {
-    const [fixedDivFullHeight, setFixedDivFullHeight] = useState(false);
-
     return (
         <Routes>
-            <Route path="/" element={<Container fixedDivFullHeight={fixedDivFullHeight} />} />
-            <Route path="/book" element={<Book setFixedDivFullHeight={setFixedDivFullHeight} />} />
+            <Route path="/" element={<Container />} />
+            <Route path="/book" element={<Book />} />
             <Route path="/mass" element={<Mass />} />
             <Route path="/aid" element={<Aid />} />
             <Route path="/profile" element={<Profile />} />

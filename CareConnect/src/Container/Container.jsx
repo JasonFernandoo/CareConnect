@@ -2,7 +2,7 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import './Container.css';
 
-function Container({ fixedDivFullHeight }) {
+function Container() {
     const navigate = useNavigate();
 
     return (
@@ -60,12 +60,6 @@ function Container({ fixedDivFullHeight }) {
                 <div className="map">
                     <p>Map</p>
                     <div className="map-image"></div>
-                </div>
-                <div className={`fixed-main-div ${fixedDivFullHeight ? 'full-height' : ''}`}>
-                    <div className='fixed-main-atas'>
-                    </div>
-                    <div className='fixed-main-bawah'>
-                    </div>
                 </div>
             </div>
         </div>
