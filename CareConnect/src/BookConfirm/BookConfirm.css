@@ -1,0 +1,81 @@
+:root {
+    --color-1: #2E2B2B;
+    --color-2: #388186;
+    --color-3: #A5E9E1;
+    --color-4: #FDF6F6;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: var(--color-4);
+}
+
+.back-profile button {
+    margin-top: 10px;
+    margin-left: 10px;
+    color: var(--color-4);
+    border: none;
+    border-radius: 5px;
+    font-size: 20px;
+    font-weight: bold;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.top {
+    height: 30%;
+    background-color: var(--color-2);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.profile-img {
+    margin: auto;
+    margin-top: 3%;
+    width: 80px;
+    height: 80px;
+    border-radius: 50px;
+    background-color: #BBBBBB;
+    border: 5px solid var(--color-4);
+}
+
+.profile-name {
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: -10px;
+    color: var(--color-4);
+    height: 20px;
+    z-index: 10;
+}
+
+.bottom {
+    height: 70%;
+    
+}
+
+.fixed-div {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 90%;
+    height: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 20;
+}
+
+.fixed-atas {
+    height: 35%;
+    background-color: var(--color-4);
+    border-radius: 10px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.fixed-bawah {
+    height: 65%;
+    margin-top: 5%;
+    border-radius: 10px;
+    background-color: var(--color-4);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
