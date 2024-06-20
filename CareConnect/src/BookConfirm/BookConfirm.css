@@ -11,71 +11,70 @@ body {
     background-color: var(--color-4);
 }
 
-.back-profile button {
-    margin-top: 10px;
-    margin-left: 10px;
-    color: var(--color-4);
-    border: none;
-    border-radius: 5px;
-    font-size: 20px;
-    font-weight: bold;
-    border: none;
-    background-color: transparent;
-    cursor: pointer;
-}
-
-.top {
-    height: 30%;
-    background-color: var(--color-2);
+.confirm-header {
+    height: 70px;
+    background-color: var(--color-4);
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
-.profile-img {
-    margin: auto;
-    margin-top: 3%;
-    width: 80px;
-    height: 80px;
-    border-radius: 50px;
-    background-color: #BBBBBB;
-    border: 5px solid var(--color-4);
-}
-
-.profile-name {
-    text-align: center;
-    font-size: 20px;
-    font-weight: bold;
-    margin-top: -10px;
-    color: var(--color-4);
-    height: 20px;
-    z-index: 10;
-}
-
-.bottom {
-    height: 70%;
-    
-}
-
-.fixed-div {
+.booked {
     position: fixed;
-    top: 50%;
-    left: 50%;
-    width: 90%;
-    height: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 20;
-}
-
-.fixed-atas {
-    height: 35%;
+    bottom: 0;
+    width: 100%;
+    height: 70%;
     background-color: var(--color-4);
-    border-radius: 10px;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    box-shadow: 0px -4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 30px 30px 0 0;
+    transition: height 1s ease-in-out;
 }
 
-.fixed-bawah {
-    height: 65%;
+.slider {
+    background-color: #BBBBBB;
+    width: 20%;
+    height: 5px;
+    border-radius: 5px;
+    margin-top: 2%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.booked-img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     margin-top: 5%;
-    border-radius: 10px;
-    background-color: var(--color-4);
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    width: 100%;
+}
+
+.booked-img img {
+    height: 75px;
+    width: 75px;
+}
+
+.booked h3 {
+    margin: 0;
+    padding-left: 5%;
+}
+
+.booked h4 {
+    margin: 0;
+    padding-left: 5%;
+}
+
+.booked p {
+    margin: 0;
+    font-size: 14px;
+    padding-left: 5%;
+}
+
+.booked h2 {
+    text-align: center;
+}
+
+.green-text {
+    color: #24B043;
+}
+
+.red-text {
+    color: rgb(240, 39, 39);
 }
