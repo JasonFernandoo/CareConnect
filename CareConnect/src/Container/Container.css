@@ -300,3 +300,30 @@ body {
   width: 100%;
   border-radius: 20px 20px 0px 0px;
 }
+
+.popup {
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  opacity: 0.7;
+  padding: 20px;
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.popup img{
+  height: 100px;
+  width: 100px;
+}
+
+.popup p {
+  font-size: 24px;
+  font-weight: bold;
+}

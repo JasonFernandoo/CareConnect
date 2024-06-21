@@ -4,6 +4,11 @@ import './Mass.css';
 
 function Mass() {
     const navigate = useNavigate();
+
+    const handleSubmit = () => {
+        navigate('/', { state: { showPopup: true } });
+    };
+
     return (
         <div className="container">
             <div className="back">
@@ -22,7 +27,7 @@ function Mass() {
                     </select>
                     <label htmlFor="note">Emergency Type</label>
                     <textarea id="note" rows="4" cols="50" placeholder="Describe the incident..."></textarea>
-                    <button className="submit" type="button">Submit</button>
+                    <button className="submit" type="button" onClick={handleSubmit}>Submit</button>
                 </form>
             </div>
         </div>

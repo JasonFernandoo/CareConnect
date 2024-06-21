@@ -1,16 +1,33 @@
-import React from 'react';
-import { useNavigate } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
+import { useNavigate, useLocation } from 'react-router-dom';
 import './Container.css';
 import bookImage from '../assets/book.png';
 import massImage from '../assets/mass-accident.png';
 import aidImage from '../assets/first-aid.png';
 import mapImage from '../assets/map.png';
+import acceptMassImage from '../assets/accept.png';
 
 function Container() {
     const navigate = useNavigate();
+    const location = useLocation();
+    const [showPopup, setShowPopup] = useState(false);
+
+    useEffect(() => {
+        if (location.state?.showPopup) {
+            setShowPopup(true);
+            const timer = setTimeout(() => {
+                setShowPopup(false);
+            }, 5000);
+            return () => clearTimeout(timer);
+        }
+    }, [location.state]);
 
     return (
         <div className="container">
+            {showPopup && <div className="popup">
+                <img src={acceptMassImage} />
+                <p>Sent!</p>
+            </div>}
             <div className="header">
                 <div className="header-atas">
                     <div className="atas-kiri">
