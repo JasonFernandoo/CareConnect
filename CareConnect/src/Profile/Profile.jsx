@@ -6,8 +6,8 @@ function Profile() {
     const navigate = useNavigate();
 
     return (
-        <div className="container">
-            <div className='top'>
+        <div className="container-profile">
+            <div className='top-profile'>
                 <div className="back-profile">
                     <button onClick={() => navigate('/')}>Back</button>     
                 </div>

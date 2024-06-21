@@ -5,6 +5,11 @@
     --color-4: #FDF6F6;
 }
 
+#root {
+    width: 390px;
+    height: 844px;
+}
+
 body {
     margin: 0;
     padding: 0;
@@ -24,8 +29,8 @@ body {
     cursor: pointer;
 }
 
-.top {
-    height: 30%;
+.container-profile {
+    height: 35%;
     background-color: var(--color-2);
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
@@ -51,7 +56,7 @@ body {
 }
 
 .bottom {
-    height: 70%;
+    height: 60%;
     
 }
 
