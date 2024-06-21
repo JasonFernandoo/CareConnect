@@ -8,10 +8,10 @@ const port = 5000;
 
 const connection = mysql.createConnection({
   host: 'localhost',
-  port: '{port}',
+  port: '3305',
   user: 'root',
-  password: '{password}',
-  database: '{database}'
+  password: 'bbee2e7',
+  database: 'careconnect'
 });
 
 connection.connect(err => {
@@ -44,6 +44,19 @@ app.post('/api/bookings', (req, res) => {
     res.status(200).json({ message: 'Data inserted successfully' });
   });
 });
+
+app.get('/api/bookings', (req, res) => {
+  const query = 'SELECT * FROM bookings ORDER BY id DESC LIMIT 1'; // Assuming 'id' is the primary key
+  connection.query(query, (error, results, fields) => {
+    if (error) {
+      console.error('Error querying database:', error);
+      res.status(500).json({ error: 'Internal server error' });
+      return;
+    }
+    res.status(200).json(results[0]); // Sending only the latest entry
+  });
+});
+
 
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);

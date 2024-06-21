@@ -2,6 +2,7 @@ import React, { useEffect, useState, useRef } from 'react';
 import './BookConfirm.css';
 import { useNavigate } from 'react-router-dom';
 import acceptImage from '../assets/accept.png';
+import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
 
 function BookConfirm() {
     const navigate = useNavigate();
@@ -12,7 +13,10 @@ function BookConfirm() {
     useEffect(() => {
         fetch('http://localhost:5000/api/bookings')
             .then(response => response.json())
-            .then(data => setLatestBooking(data))
+            .then(data => {
+                console.log('Fetched booking data:', data);
+                setLatestBooking(data);
+            })
             .catch(error => console.error('Error fetching latest booking:', error));
     }, []);
 
@@ -44,6 +48,23 @@ function BookConfirm() {
                         </div>
                     </div>
                 </div>
+            </div>
+            <div className="map-container">
+                {latestBooking && latestBooking.latitude && latestBooking.longitude ? (
+                    <MapContainer center={[latestBooking.latitude, latestBooking.longitude]} zoom={13} style={{ height: "400px", width: "100%" }}>
+                        <TileLayer
+                            url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+                            attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+                        />
+                        <Marker position={[latestBooking.latitude, latestBooking.longitude]}>
+                            <Popup>
+                                {latestBooking.hospitalName} <br /> {latestBooking.location}
+                            </Popup>
+                        </Marker>
+                    </MapContainer>
+                ) : (
+                    <p>No map data available</p>
+                )}
             </div>
             <div className="booked" ref={bookedRef} style={{ height: bookedHeight }}>
                 <div className="slider"></div>

@@ -78,3 +78,13 @@ body {
 .red-text {
     color: rgb(240, 39, 39);
 }
+
+.map-container {
+    margin-top: 20px;
+}
+
+.leaflet-container {
+    height: 400px;
+    width: 100%;
+}
+
