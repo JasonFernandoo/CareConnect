@@ -27,7 +27,7 @@ function Aid() {
             <div className="back">
                 <button onClick={() => navigate('/')}>First Aid Method</button>     
             </div>
-            <div className="search">
+            <div className="search-aid">
                 <input id="search-input" type="text" placeholder="Type to Search" value={searchQuery} onChange={e => setSearchQuery(e.target.value)} />
                 <button className="search-button" onClick={searchYoutube}>Search</button>
             </div>

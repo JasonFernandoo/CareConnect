@@ -27,13 +27,13 @@ body {
     cursor: pointer;
 }
 
-.search {
+.search-aid {
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.search input {
+.search-aid input {
     margin-top: 10px;
     height: 50px;
     width: 90%;
@@ -41,7 +41,6 @@ body {
     border-radius: 5px;
     border: none;
     padding: 5px;
-
     z-index: 5;
 }
 
@@ -51,8 +50,8 @@ body {
     border: none;
     background-color: transparent;
     z-index: 10;
-    margin-top: 0px;
-    margin-left: -55px;
+    right: 10px; 
+    position: absolute;
 }
 
 #results iframe {

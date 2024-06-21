@@ -91,6 +91,13 @@ body {
   width: 100%;
 }
 
+.search {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 15px;
+}
+
 .button {
   width: 90%;
   height: 230px;
