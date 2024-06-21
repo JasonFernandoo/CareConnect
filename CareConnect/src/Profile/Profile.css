@@ -14,7 +14,6 @@ body {
     margin: 0;
     padding: 0;
     background-color: var(--color-4);
-    overflow: hidden;
 }
 
 .back-profile button {
@@ -58,7 +57,10 @@ body {
 
 .bottom {
     height: 60%;
-    
+}
+
+.non-scrollable-container {
+    overflow: hidden; 
 }
 
 .fixed-div {

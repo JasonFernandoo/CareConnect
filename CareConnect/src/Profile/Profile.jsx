@@ -17,12 +17,14 @@ function Profile() {
                 </div>
             </div>
             <div className='bottom'></div>
-            <div className="fixed-div">
-                <div className='fixed-atas'>
+            <div class="non-scrollable-container">
+                <div className="fixed-div">
+                    <div className='fixed-atas'>
 
-                </div>
-                <div className='fixed-bawah'>
-                
+                    </div>
+                    <div className='fixed-bawah'>
+                    
+                    </div>
                 </div>
             </div>
         </div>
