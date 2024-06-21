@@ -1,6 +1,9 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import './Container.css';
+import bookImage from '../assets/book.png';
+import massImage from '../assets/mass-accident.png';
+import aidImage from '../assets/first-aid.png';
 
 function Container() {
     const navigate = useNavigate();
@@ -29,14 +32,23 @@ function Container() {
             <div className="main-project">
                 <div className="button">
                     <div className="button-atas">
-                        <button onClick={() => navigate('/book')}>Book an Ambulance</button>
+                        <div className='button-atas-img'>
+                            <img src={bookImage}/>
+                        </div>
+                        <button onClick={() => navigate('/book')} style={{position: 'absolute', top: '0'}}>Book an Ambulance</button>
                     </div>
                     <div className="button-bawah">
                         <div className="button-kiri">
-                            <button onClick={() => navigate('/mass')}>Mass<br />Accident</button>
+                            <div className='button-kiri-img'>
+                                <img src={massImage}/>
+                            </div>
+                            <button onClick={() => navigate('/mass')} style={{position: 'absolute', top: '0'}}>Mass<br />Accident</button>
                         </div>
                         <div className="button-kanan">
-                            <button onClick={() => navigate('/aid')}>First Aid<br />Method</button>
+                            <div className='button-kanan-img'>
+                                <img src={aidImage}/>
+                            </div>
+                            <button onClick={() => navigate('/aid')} style={{position: 'absolute', top: '0'}}>First Aid<br />Method</button>
                         </div>
                     </div>
                 </div>
