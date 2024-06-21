@@ -282,8 +282,14 @@ body {
 }
 
 .map-image {
-  height: 200px;
+  height: 350px;
   width: 100%;
   border-radius: 20px 20px 0px 0px;
   background-color: #BBBBBB;
+}
+
+.map-image img {
+  height: 100%;
+  width: 100%;
+  border-radius: 20px 20px 0px 0px;
 }

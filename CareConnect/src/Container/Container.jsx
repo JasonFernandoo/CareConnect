@@ -4,6 +4,7 @@ import './Container.css';
 import bookImage from '../assets/book.png';
 import massImage from '../assets/mass-accident.png';
 import aidImage from '../assets/first-aid.png';
+import mapImage from '../assets/map.png';
 
 function Container() {
     const navigate = useNavigate();
@@ -71,7 +72,9 @@ function Container() {
                 </div>
                 <div className="map">
                     <p>Map</p>
-                    <div className="map-image"></div>
+                    <div className="map-image">
+                        <img src={mapImage} alt="map"/>
+                    </div>
                 </div>
             </div>
         </div>
