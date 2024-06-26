@@ -1,27 +1,13 @@
-const mysql = require('mysql');
+const { sql } = require('@vercel/postgres');
 
-const connection = mysql.createConnection({
-  host: 'localhost', 
-  port: '3305',
-  user: 'root',  
-  password: 'JasonF3205', 
-  database: 'CareConnect'
-});
-
-connection.connect((err) => {
-  if (err) {
-    console.error('Error connecting to database: ' + err.stack);
-    return;
+async function connectAndQuery() {
+  try {
+    // Connect to the PostgreSQL database
+    const { rows } = await sql`SELECT * FROM bookings`;
+    console.log('Query result:', rows);
+  } catch (err) {
+    console.error('Error connecting to database or querying:', err);
   }
-  console.log('Connected to database');
-});
+}
 
-connection.query('SELECT * FROM bookings', (error, results, fields) => {
-  if (error) {
-    console.error('Error querying database: ' + error.stack);
-    return;
-  }
-  console.log('Query result:', results);
-});
-
-connection.end();
+connectAndQuery();
