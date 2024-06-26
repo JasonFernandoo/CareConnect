@@ -21,17 +21,17 @@ function BookConfirm() {
 
     const fetchLatestBooking = async () => {
         try {
-            const response = await fetch('http://localhost:5000/api/bookings');
-            if (!response.ok) {
-                throw new Error('Failed to fetch latest booking');
-            }
-            const data = await response.json();
-            console.log('Fetched booking data:', data);
-            setLatestBooking(data);
+          const response = await fetch('http://localhost:5000/api/bookings');
+          if (!response.ok) {
+            throw new Error('Failed to fetch latest booking');
+          }
+          const data = await response.json();
+          console.log('Fetched booking data:', data);
+          setLatestBooking(data);
         } catch (error) {
-            console.error('Error fetching latest booking:', error);
+          console.error('Error fetching latest booking:', error);
         }
-    };
+      };      
 
     useEffect(() => {
         const handleClickOutside = (event) => {
