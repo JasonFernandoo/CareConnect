@@ -19,10 +19,16 @@ function Profile() {
             <div className='bottom'></div>
             <div className="fixed-div">
                 <div className='fixed-atas'>
-
+                    <button>My Address</button>
+                    <button>Account</button>
+                    <button className='last-button'>Riwayat</button>
                 </div>
                 <div className='fixed-bawah'>
-                
+                    <button>Notifications</button>
+                    <button>Passwords</button>
+                    <button>Privacy and Security</button>
+                    <button>Language</button>
+                    <button className='last-button' onClick={() => { navigate('/login', { replace: true }); window.location.reload(); }}>Logout</button>
                 </div>
             </div>
         </div>

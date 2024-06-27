@@ -1,26 +1,114 @@
-.submit {
+.login-main {
+    width: 100%;
     height: 100%;
-    width: 50%;
-    color: white;
-    text-align: center;
-    font-size: 18px;
-    font-weight: bold;
-    padding-left: 30px;
-    border-radius: 20px;
-    background-color: gray;
-    opacity: 0.7;
-    border: none;
+    background-color: #FDF6F6;
 }
 
-.login-main {
+.login-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.login-logo img {
+    width: 200px;
+}
+
+.login-logo {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
-    background-color: #f2f2f2;
+    margin-top: -40%;
 }
 
 .login-input {
+    margin-bottom: 20%  ;
+}
+
+.login-input form {
+    display: flex;
     justify-content: center;
     align-items: center;
+    gap: 10px;
+}
+
+.login-input p {
+    font-weight: bold;
+    left: 0;
+    margin-left: 5%;
+    margin-top: 30%;
+}
+
+.username-input-div {
+    width: 80%;
+    margin-left: 8%;
+    margin-right: auto;
+}
+
+.username-input-div input {
+    width: 100%;
+}
+
+.pass-input-div {
+    width: 80%;
+    margin-left: 8%;
+    margin-right: auto;
+}
+
+.pass-input-div input {
+    width: 100%;
+}
+
+.pass-show {
+    display: flex;
+    width: 80%;
+    z-index: 100;
+    justify-content: right;
+    padding-right: 5%;
+    position: absolute;
+    margin-top: -40px;
+}
+
+.submit-login {
+    width: 85%;
+    text-align: center;
+    background-color: #388186;
+    margin-left: 8%;
+    margin-right: auto;
+    color: white;
+    font-weight: normal;
+}
+
+.sign-up {
+    width: 100%;
+    text-align: center;
+    margin-bottom: -50%;
+}
+
+.other-sign-in {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 30%;
+}
+
+.other-symbol {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.symbol-1 {
+    height: 50px;
+    width: 75px;
+    border-radius: 10px;
+    background-color: #FDF6F6;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }

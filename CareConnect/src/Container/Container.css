@@ -51,6 +51,11 @@ body {
   display: grid;
   grid-template-columns: 1fr 1fr;
 }
+
+.atas-kanan p {
+  margin: 0;
+}
+
 .profile {
   height: 35px;
   width: 35px;

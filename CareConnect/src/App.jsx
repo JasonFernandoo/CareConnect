@@ -27,6 +27,7 @@ function App() {
                     <Route path="/aid" element={<Aid />} />
                     <Route path="/profile" element={<Profile />} />
                     <Route path="/blank" element={<User2 />} />
+                    <Route path="/login" element={<Login />} />
                 </Routes>
             ) : (
                 <Login onLogin={handleLogin} />

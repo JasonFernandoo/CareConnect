@@ -29,16 +29,17 @@ const Login = ({ onLogin }) => {
           <img src={Logo} alt="Logo" />
         </div>
         <div className="login-input">
-          <h2>Welcome back!</h2>
-          <p>Please enter your details</p>
+          <p>Login to your account</p>
           <form onSubmit={(e) => e.preventDefault()}>
-            <input 
-              type="username" 
-              placeholder="Username" 
-              value={username}
-              onChange={(e) => setusername(e.target.value)}
-              required 
-            />
+            <div className="username-input-div">
+              <input 
+                type="username" 
+                placeholder="Username" 
+                value={username}
+                onChange={(e) => setusername(e.target.value)}
+                required 
+              />
+            </div>
             <div className="pass-input-div">
               <input 
                 type={showPassword ? "text" : "password"} 
@@ -47,14 +48,30 @@ const Login = ({ onLogin }) => {
                 onChange={(e) => setPassword(e.target.value)}
                 required 
               />
-              {showPassword ? (
-                <FaEyeSlash onClick={() => setShowPassword(!showPassword)} />
-              ) : (
-                <FaEye onClick={() => setShowPassword(!showPassword)} />
-              )}
+              <div className="pass-show">
+                {showPassword ? (
+                  <FaEyeSlash onClick={() => setShowPassword(!showPassword)} />
+                ) : (
+                  <FaEye onClick={() => setShowPassword(!showPassword)} />
+                )}
+              </div>
             </div>
-            <button className="submit" type="button" onClick={handleLogin}>Log In</button>
+            <button className="submit-login" type="button" onClick={handleLogin}>Sign In</button>
           </form>
+        </div>
+        <div className="other-sign-in">
+          <p>Or sign in with:</p>
+          <div className="other-symbol">
+            <div className="symbol-1">
+
+            </div>
+            <div className="symbol-1">
+              
+            </div>
+            <div className="symbol-1">
+              
+            </div>
+          </div>
         </div>
         <p className="sign-up">Don't have an account? <a href="#">Sign Up</a></p>
       </div>
