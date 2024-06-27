@@ -5,6 +5,10 @@ import { useNavigate } from 'react-router-dom';
 function Profile() {
     const navigate = useNavigate();
 
+    const handleLogout = () => {
+        navigate('/login', { replace: true });
+      };
+
     return (
         <div className="container-profile">
             <div className='top-profile'>
@@ -28,7 +32,7 @@ function Profile() {
                     <button>Passwords</button>
                     <button>Privacy and Security</button>
                     <button>Language</button>
-                    <button className='last-button' onClick={() => { navigate('/login', { replace: true }); window.location.reload(); }}>Logout</button>
+                    <button className='last-button' onClick={handleLogout}>Logout</button>
                 </div>
             </div>
         </div>
