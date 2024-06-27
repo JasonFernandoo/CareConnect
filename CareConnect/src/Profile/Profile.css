@@ -33,7 +33,6 @@ body {
     height: 35%;
     background-color: var(--color-2);
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    overflow: hidden;
 }
 
 .profile-img {
@@ -75,7 +74,7 @@ body {
 }
 
 .fixed-atas {
-    height: 35%;
+    min-height: 35%;
     display: flex;
     flex-direction: column;
     background-color: var(--color-4);
@@ -92,7 +91,7 @@ body {
     background-color: #FDF6F6;
     border-bottom: 0.5px solid #BBBBBB;
     border-radius: 0;
-    font-style: none;
+    color: #616161;
 }
 
 .last-button {
@@ -100,11 +99,12 @@ body {
 }
 
 .fixed-atas button:hover {
+    color: #616161;
     background-color: #BBBBBB;
 }
 
 .fixed-bawah {
-    height: 65%;
+    min-height: 65%;
     margin-top: 5%;
     display: flex;
     flex-direction: column;
@@ -122,9 +122,10 @@ body {
     background-color: #FDF6F6;
     border-bottom: 0.5px solid #BBBBBB;
     border-radius: 0;
-    font-style: none;
+    color: #616161;
 }
 
 .fixed-bawah button:hover {
+    color: #616161;
     background-color: #BBBBBB;
 }
