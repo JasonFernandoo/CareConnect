@@ -7,10 +7,7 @@ import Mass from './Mass/Mass';
 import Aid from './Aid/Aid';
 import Profile from './Profile/Profile';
 import Login from './Login/Login';
-
-const BlankPage = () => {
-  return <div>This is a blank page</div>;
-};
+import User2 from './User2/User2';
 
 function App() {
     const [isAuthenticated, setIsAuthenticated] = useState(false);
@@ -29,7 +26,7 @@ function App() {
                     <Route path="/mass" element={<Mass />} />
                     <Route path="/aid" element={<Aid />} />
                     <Route path="/profile" element={<Profile />} />
-                    <Route path="/blank" element={<BlankPage />} />
+                    <Route path="/blank" element={<User2 />} />
                 </Routes>
             ) : (
                 <Login onLogin={handleLogin} />
