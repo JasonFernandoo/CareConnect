@@ -6,15 +6,15 @@ import "./Login.css";
 
 const Login = ({ onLogin }) => {
   const [showPassword, setShowPassword] = useState(false);
-  const [email, setEmail] = useState('');
+  const [username, setusername] = useState('');
   const [password, setPassword] = useState('');
   const navigate = useNavigate();
 
   const handleLogin = () => {
-    if (email === 'User1' && password === '123') {
+    if (username === 'User1' && password === '123') {
       onLogin();
       navigate('/');
-    } else if (email === 'User2' && password === '456') {
+    } else if (username === 'User2' && password === '456') {
       onLogin();
       navigate('/blank');
     } else {
@@ -33,10 +33,10 @@ const Login = ({ onLogin }) => {
           <p>Please enter your details</p>
           <form onSubmit={(e) => e.preventDefault()}>
             <input 
-              type="email" 
-              placeholder="Email" 
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
+              type="username" 
+              placeholder="Username" 
+              value={username}
+              onChange={(e) => setusername(e.target.value)}
               required 
             />
             <div className="pass-input-div">
