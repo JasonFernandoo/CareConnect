@@ -24,6 +24,11 @@ const Login = ({ onLogin }) => {
 
   return (
     <div className="login-main">
+      <div className="overlay-text">
+        CareConnect
+      </div>
+      <div class="door-panel door-left"></div>
+      <div class="door-panel door-right"></div>
       <div className="login-container">
         <div className="login-logo">
           <img src={Logo} alt="Logo" />
