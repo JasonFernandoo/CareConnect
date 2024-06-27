@@ -74,7 +74,7 @@ body {
 }
 
 .fixed-atas {
-    min-height: 35%;
+    min-height: 36%;
     display: flex;
     flex-direction: column;
     background-color: var(--color-4);
