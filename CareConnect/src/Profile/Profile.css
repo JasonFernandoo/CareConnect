@@ -33,6 +33,7 @@ body {
     height: 35%;
     background-color: var(--color-2);
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    overflow: hidden;
 }
 
 .profile-img {
@@ -91,6 +92,7 @@ body {
     background-color: #FDF6F6;
     border-bottom: 0.5px solid #BBBBBB;
     border-radius: 0;
+    font-style: none;
 }
 
 .last-button {
@@ -120,6 +122,7 @@ body {
     background-color: #FDF6F6;
     border-bottom: 0.5px solid #BBBBBB;
     border-radius: 0;
+    font-style: none;
 }
 
 .fixed-bawah button:hover {
