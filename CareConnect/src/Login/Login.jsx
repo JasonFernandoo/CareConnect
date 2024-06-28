@@ -28,8 +28,8 @@ const Login = ({ onLogin }) => {
       <div className="overlay-text">
         <img src={WhiteLogo} alt="Logo"/>
       </div>
-      <div class="door-panel door-left"></div>
-      <div class="door-panel door-right"></div>
+      <div className="door-panel door-left"></div>
+      <div className="door-panel door-right"></div>
       <div className="login-container">
         <div className="login-logo">
           <img src={Logo} alt="Logo" />
