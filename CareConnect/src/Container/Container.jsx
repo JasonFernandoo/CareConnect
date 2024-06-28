@@ -6,6 +6,7 @@ import massImage from '../assets/mass-accident.png';
 import aidImage from '../assets/first-aid.png';
 import mapImage from '../assets/map.png';
 import acceptMassImage from '../assets/accept.png';
+import locationImage from '../assets/location.png';
 
 function Container() {
     const navigate = useNavigate();
@@ -31,7 +32,9 @@ function Container() {
             <div className="header">
                 <div className="header-atas">
                     <div className="atas-kiri">
-                        <div className="profile"></div>
+                        <div className="profile">
+                            <img src={locationImage} />
+                        </div>
                         <p>Jakarta, Indonesia</p>
                     </div>
                     <div className="atas-kanan">
