@@ -51,7 +51,7 @@ function BookConfirm() {
             try {
                 if (!latestBooking) return;
 
-                const geocodeUrl = `https://maps.googleapis.com/maps/api/geocode/json?address=${encodeURIComponent(latestBooking.hospitalName)}&key=${GOOGLE_API_KEY}`;
+                const geocodeUrl = `https://maps.googleapis.com/maps/api/geocode/json?address=${encodeURIComponent(latestBooking.hospitalname)}&key=${GOOGLE_API_KEY}`;
                 const response = await axios.get(geocodeUrl);
 
                 if (response.data.status === 'OK' && response.data.results.length > 0) {
@@ -60,7 +60,7 @@ function BookConfirm() {
                     setErrorFetchingCoordinates(false); 
                 } else if (response.data.status === 'ZERO_RESULTS') {
                     setErrorFetchingCoordinates(true); 
-                    console.error('Zero results found for the address:', latestBooking.hospitalName);
+                    console.error('Zero results found for the address:', latestBooking.hospitalname);
                 } else {
                     setErrorFetchingCoordinates(true);
                     console.error('Error fetching coordinates:', response.data.status);
@@ -89,6 +89,9 @@ function BookConfirm() {
                         </div>
                     </div>
                 </div>
+            </div>
+            <div className="back-profile">
+                <button onClick={() => navigate('/')}>Back</button>     
             </div>
             <div className="map-container">
                 {latestBooking ? (
@@ -121,9 +124,9 @@ function BookConfirm() {
                         <h4>Location</h4>
                         <p>{latestBooking.location}</p>
                         <h4>Hospital Name</h4>
-                        <p>{latestBooking.hospitalName}</p>
+                        <p>{latestBooking.hospitalname}</p>
                         <h4>Emergency Type</h4>
-                        <p>{latestBooking.emergencyType}</p>
+                        <p>{latestBooking.emergencytype}</p>
                         <h4>Note</h4>
                         <p>{latestBooking.note}</p>
                         <p className={latestBooking.nurseAssistance === 'yes' ? 'green-text' : 'red-text'} style={{ marginTop: '10%' }}>

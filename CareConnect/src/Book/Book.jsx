@@ -5,11 +5,14 @@ import { useNavigate } from 'react-router-dom';
 function Book() {
     const navigate = useNavigate();
     const [formData, setFormData] = useState({
+        userid: '',
+        bookingid: '',
         location: '',
         hospitalName: '',
         emergencyType: '',
         note: '',
-        nurseAssistance: ''
+        nurseAssistance: '',
+        status: ''
     });
     const [submitSuccess, setSubmitSuccess] = useState(false);
     const [buttonClicked, setButtonClicked] = useState(false);
