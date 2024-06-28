@@ -90,10 +90,10 @@ function BookConfirm() {
                     </div>
                 </div>
             </div>
-            <div className="back-profile">
-                <button onClick={() => navigate('/')}>Back</button>     
-            </div>
             <div className="map-container">
+                <div className="back-profile">
+                    <button onClick={() => navigate('/')}>Back</button>     
+                </div>
                 {latestBooking ? (
                     coordinates ? (
                         <LoadScript googleMapsApiKey={GOOGLE_API_KEY}>
@@ -101,6 +101,9 @@ function BookConfirm() {
                                 mapContainerStyle={{ height: '100vh', width: '100%' }}
                                 center={coordinates}
                                 zoom={15}
+                                options={{
+                                    disableDefaultUI: true,
+                                }}
                             >
                                 <Marker position={coordinates} />
                             </GoogleMap>
