@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Logo from "../assets/logo.png";
+import WhiteLogo from "../assets/white-logo.png";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import "./Login.css";
 
@@ -25,7 +26,7 @@ const Login = ({ onLogin }) => {
   return (
     <div className="login-main">
       <div className="overlay-text">
-        CareConnect
+        <img src={WhiteLogo} alt="Logo"/>
       </div>
       <div class="door-panel door-left"></div>
       <div class="door-panel door-right"></div>
