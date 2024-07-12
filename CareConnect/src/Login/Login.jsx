@@ -40,7 +40,7 @@ const Login = ({ onLogin }) => {
             <div className="username-input-div">
               <input 
                 type="username" 
-                placeholder="use User1" 
+                placeholder="Username (use User1)" 
                 value={username}
                 onChange={(e) => setusername(e.target.value)}
                 required 
@@ -49,7 +49,7 @@ const Login = ({ onLogin }) => {
             <div className="pass-input-div">
               <input 
                 type={showPassword ? "text" : "password"} 
-                placeholder="use 123" 
+                placeholder="Password (use 123)" 
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 required 
