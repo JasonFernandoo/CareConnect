@@ -52,7 +52,7 @@ function Book() {
     return (
         <div className="container">
             <div className="back">
-                <button onClick={() => navigate('/')}>Book an Ambulance</button>            
+                <button onClick={() => navigate('/')}>← Book an Ambulance</button>            
             </div>
             <div className="form">
                 <form onSubmit={handleSubmit}>

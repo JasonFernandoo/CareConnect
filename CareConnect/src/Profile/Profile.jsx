@@ -13,7 +13,7 @@ function Profile() {
         <div className="container-profile">
             <div className='top-profile'>
                 <div className="back-profile">
-                    <button onClick={() => navigate('/')}>Back</button>     
+                    <button onClick={() => navigate('/')}>← Back</button>     
                 </div>
                 <div className='profile-img'></div>
                 <div className='profile-name'>

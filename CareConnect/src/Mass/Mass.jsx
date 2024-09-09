@@ -12,7 +12,7 @@ function Mass() {
     return (
         <div className="container">
             <div className="back">
-                <button onClick={() => navigate('/')}>Mass Accident</button>
+                <button onClick={() => navigate('/')}>← Mass Accident</button>
             </div>
             <div className="form">
                 <form>

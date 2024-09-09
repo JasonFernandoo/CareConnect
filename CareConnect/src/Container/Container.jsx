@@ -77,16 +77,16 @@ function Container() {
                     <p>Emergency Calls</p>
                     <div className="emergency-grid">
                         <div className="grid-1">
-                            <button>RedKar</button>
+                            <button>RedKar<br></br><span>Pemadam Kebakaran</span></button>
                         </div>
                         <div className="grid-2">
-                            <button>Polri</button>
+                            <button>Polri<br></br><span>Lapor Polisi</span></button>
                         </div>
                         <div className="grid-3">
-                            <button>LISA</button>
+                            <button>LISA<br></br><span>Suicidal Prevention</span></button>
                         </div>
                         <div className="grid-4">
-                            <button>SAR</button>
+                            <button>SAR<br></br><span>Search and Rescue</span></button>
                         </div>
                     </div>
                 </div>
