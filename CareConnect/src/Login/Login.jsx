@@ -4,6 +4,9 @@ import Logo from "../assets/logo.png";
 import WhiteLogo from "../assets/white-logo.png";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import "./Login.css";
+import GoogleLogo from "../assets/google.png";
+import FacebookLogo from "../assets/facebook.png";
+import TwitterLogo from "../assets/twitter.png";
 
 const Login = ({ onLogin }) => {
   const [showPassword, setShowPassword] = useState(false);
@@ -69,13 +72,13 @@ const Login = ({ onLogin }) => {
           <p>Or sign in with:</p>
           <div className="other-symbol">
             <div className="symbol-1">
-
+              <img src={GoogleLogo} alt="Google" />
             </div>
-            <div className="symbol-1">
-              
+            <div className="symbol-2">
+              <img src={FacebookLogo} alt="Facebook" />
             </div>
-            <div className="symbol-1">
-              
+            <div className="symbol-3">
+              <img src={TwitterLogo} alt="Twitter" />
             </div>
           </div>
         </div>

@@ -111,6 +111,46 @@
     border-radius: 10px;
     background-color: #FDF6F6;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
+.symbol-1 img {
+    width: 35%;
+    height: 50%;
+}
+
+.symbol-2 {
+    height: 50px;
+    width: 75px;
+    border-radius: 10px;
+    background-color: #FDF6F6;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
+.symbol-2 img {
+    width: 40%;
+    height: 60%;
+}
+
+.symbol-3 {
+    height: 50px;
+    width: 75px;
+    border-radius: 10px;
+    background-color: #FDF6F6;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
+.symbol-3 img {
+    width: 40%;
+    height: 60%;
 }
 
 .door-panel {
