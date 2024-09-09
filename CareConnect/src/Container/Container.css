@@ -269,8 +269,8 @@ body {
 }
 
 .emergency-grid span {
-  font-size: 9.5px;
-  font-weight: lighter
+  font-size: 9px;
+  font-weight: lighter; 
 }
 
 .grid-1 {
