@@ -2,6 +2,7 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import locationImage from '../assets/location.png';
 import './User2.css'
+import addImage from '../assets/plus.png';
 
 function User2() {
     const navigate = useNavigate();
@@ -28,7 +29,9 @@ function User2() {
 
             </div>
             <div className='navbar'>
-                
+                <button onClick={() => navigate('/condition')}>
+                    <img src={addImage} />
+                </button>
             </div>
         </div>
     );

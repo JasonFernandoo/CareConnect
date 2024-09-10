@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import { GoogleMap, LoadScript, Marker } from '@react-google-maps/api';
 import axios from 'axios';
 import acceptImage from '../assets/accept.png';
+import locationImage from '../assets/location.png';
 
 const GOOGLE_API_KEY = 'AIzaSyCSyGZc-LCUj0tIJ6pSb5ZJwPYlQSbXT48';
 
@@ -21,17 +22,17 @@ function BookConfirm() {
 
     const fetchLatestBooking = async () => {
         try {
-          const response = await fetch('http://localhost:5000/api/bookings');
-          if (!response.ok) {
-            throw new Error('Failed to fetch latest booking');
-          }
-          const data = await response.json();
-          console.log('Fetched booking data:', data);
-          setLatestBooking(data);
+            const response = await fetch('http://localhost:5000/api/bookings');
+            if (!response.ok) {
+                throw new Error('Failed to fetch latest booking');
+            }
+            const data = await response.json();
+            console.log('Fetched booking data:', data);
+            setLatestBooking(data);
         } catch (error) {
-          console.error('Error fetching latest booking:', error);
+            console.error('Error fetching latest booking:', error);
         }
-      };      
+    };
 
     useEffect(() => {
         const handleClickOutside = (event) => {
@@ -51,7 +52,7 @@ function BookConfirm() {
             try {
                 if (!latestBooking) return;
 
-                const geocodeUrl = `https://maps.googleapis.com/maps/api/geocode/json?address=${encodeURIComponent(latestBooking.hospitalname)}&key=${GOOGLE_API_KEY}`;
+                const geocodeUrl = `https://maps.googleapis.com/maps/api/geocode/json?address=${encodeURIComponent(latestBooking.hospitalName)}&key=${GOOGLE_API_KEY}`;
                 const response = await axios.get(geocodeUrl);
 
                 if (response.data.status === 'OK' && response.data.results.length > 0) {
@@ -60,7 +61,7 @@ function BookConfirm() {
                     setErrorFetchingCoordinates(false); 
                 } else if (response.data.status === 'ZERO_RESULTS') {
                     setErrorFetchingCoordinates(true); 
-                    console.error('Zero results found for the address:', latestBooking.hospitalname);
+                    console.error('Zero results found for the address:', latestBooking.hospitalName);
                 } else {
                     setErrorFetchingCoordinates(true);
                     console.error('Error fetching coordinates:', response.data.status);
@@ -79,7 +80,9 @@ function BookConfirm() {
             <div className="confirm-header">
                 <div className="header-atas">
                     <div className="atas-kiri">
-                        <div className="profile"></div>
+                        <div className="profile">
+                            <img src={locationImage} />
+                        </div>
                         <p>Jakarta, Indonesia</p>
                     </div>
                     <div className="atas-kanan">
@@ -91,9 +94,6 @@ function BookConfirm() {
                 </div>
             </div>
             <div className="map-container">
-                <div className="back-profile">
-                    <button onClick={() => navigate('/')}>Back</button>     
-                </div>
                 {latestBooking ? (
                     coordinates ? (
                         <LoadScript googleMapsApiKey={GOOGLE_API_KEY}>
@@ -101,9 +101,6 @@ function BookConfirm() {
                                 mapContainerStyle={{ height: '100vh', width: '100%' }}
                                 center={coordinates}
                                 zoom={15}
-                                options={{
-                                    disableDefaultUI: true,
-                                }}
                             >
                                 <Marker position={coordinates} />
                             </GoogleMap>
@@ -127,9 +124,9 @@ function BookConfirm() {
                         <h4>Location</h4>
                         <p>{latestBooking.location}</p>
                         <h4>Hospital Name</h4>
-                        <p>{latestBooking.hospitalname}</p>
+                        <p>{latestBooking.hospitalName}</p>
                         <h4>Emergency Type</h4>
-                        <p>{latestBooking.emergencytype}</p>
+                        <p>{latestBooking.emergencyType}</p>
                         <h4>Note</h4>
                         <p>{latestBooking.note}</p>
                         <p className={latestBooking.nurseAssistance === 'yes' ? 'green-text' : 'red-text'} style={{ marginTop: '10%' }}>

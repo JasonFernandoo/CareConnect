@@ -1,16 +1,20 @@
 const express = require('express');
 const bodyParser = require('body-parser');
-const { Client } = require('pg');
+const mysql = require('mysql');
 const cors = require('cors');
 
 const app = express();
 const port = 5000;
 
-const client = new Client({
-  connectionString: 'postgres://default:ySoAlI3jbD0d@ep-proud-cherry-a186wsy9.ap-southeast-1.aws.neon.tech:5432/verceldb?sslmode=require'
+const connection = mysql.createConnection({
+  host: 'localhost',
+  port: '1234',
+  user: 'root',
+  password: 'bbee2e7',
+  database: 'careconnect'
 });
 
-client.connect(err => {
+connection.connect(err => {
   if (err) {
     console.error('Error connecting to database:', err);
     return;
@@ -21,36 +25,38 @@ client.connect(err => {
 app.use(bodyParser.json());
 app.use(cors());
 
-app.post('/api/bookings', async (req, res) => {
+app.post('/api/bookings', (req, res) => {
+  console.log('Received a POST request to /api/bookings'); 
+
   const { location, hospitalName, emergencyType, note, nurseAssistance } = req.body;
-  const userID = '1';
-  const status = 'pending';
 
-  try {
-    const query = 'INSERT INTO booking_data (userID, location, hospitalName, emergencyType, note, nurseAssistance, status) VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING bookingID';
-    const values = [userID, location, hospitalName, emergencyType, note, nurseAssistance, status];
-    const result = await client.query(query, values);
+  const query = 'INSERT INTO bookings (location, hospitalName, emergencyType, note, nurseAssistance) VALUES (?, ?, ?, ?, ?)';
+  console.log('SQL Query:', query);
+  console.log('Data to be inserted:', [location, hospitalName, emergencyType, note, nurseAssistance]);
 
-    const newBookingID = result.rows[0].bookingID;
-
+  connection.query(query, [location, hospitalName, emergencyType, note, nurseAssistance], (error, results, fields) => {
+    if (error) {
+      console.error('Error inserting into database:', error);
+      res.status(500).json({ error: 'Internal server error' });
+      return;
+    }
     console.log('Data inserted into database');
-    res.status(200).json({ message: 'Data inserted successfully', bookingID: newBookingID });
-  } catch (error) {
-    console.error('Error inserting into database:', error);
-    res.status(500).json({ error: 'Internal server error' });
-  }
+    res.status(200).json({ message: 'Data inserted successfully' });
+  });
 });
 
-app.get('/api/bookings', async (req, res) => {
-  try {
-    const query = 'SELECT * FROM booking_data ORDER BY bookingID DESC LIMIT 1';
-    const result = await client.query(query);
-    res.status(200).json(result.rows[0]);
-  } catch (error) {
-    console.error('Error querying database:', error);
-    res.status(500).json({ error: 'Internal server error' });
-  }
+app.get('/api/bookings', (req, res) => {
+  const query = 'SELECT * FROM bookings ORDER BY id DESC LIMIT 1'; // Assuming 'id' is the primary key
+  connection.query(query, (error, results, fields) => {
+    if (error) {
+      console.error('Error querying database:', error);
+      res.status(500).json({ error: 'Internal server error' });
+      return;
+    }
+    res.status(200).json(results[0]); // Sending only the latest entry
+  });
 });
+
 
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);

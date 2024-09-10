@@ -1,10 +1,14 @@
-const { Client } = require('pg');
+const mysql = require('mysql');
 
-const client = new Client({
-  connectionString: 'postgres://default:ySoAlI3jbD0d@ep-proud-cherry-a186wsy9.ap-southeast-1.aws.neon.tech:5432/verceldb?sslmode=require'
+const connection = mysql.createConnection({
+  host: 'localhost', 
+  port: '1234',
+  user: 'root',  
+  password: 'bbee2e7', 
+  database: 'careconnect'
 });
 
-client.connect((err) => {
+connection.connect((err) => {
   if (err) {
     console.error('Error connecting to database: ' + err.stack);
     return;
@@ -12,11 +16,12 @@ client.connect((err) => {
   console.log('Connected to database');
 });
 
-client.query('SELECT * FROM bookings', (error, results) => {
+connection.query('SELECT * FROM bookings', (error, results, fields) => {
   if (error) {
     console.error('Error querying database: ' + error.stack);
     return;
   }
-  console.log('Query result:', results.rows);
-  client.end();
+  console.log('Query result:', results);
 });
+
+connection.end();

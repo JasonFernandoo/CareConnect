@@ -20,7 +20,7 @@ const Login = ({ onLogin }) => {
       navigate('/');
     } else if (username === 'User2' && password === '456') {
       onLogin();
-      navigate('/blank');
+      navigate('/user2');
     } else {
       alert('Login failed');
     }

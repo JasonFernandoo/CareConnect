@@ -8,6 +8,7 @@ import Aid from './Aid/Aid';
 import Profile from './Profile/Profile';
 import Login from './Login/Login';
 import User2 from './User2/User2';
+import Condition from './Condition/Condition';
 
 function App() {
     const [isAuthenticated, setIsAuthenticated] = useState(false);
@@ -26,7 +27,8 @@ function App() {
                     <Route path="/mass" element={<Mass />} />
                     <Route path="/aid" element={<Aid />} />
                     <Route path="/profile" element={<Profile />} />
-                    <Route path="/blank" element={<User2 />} />
+                    <Route path="/user2" element={<User2 />} />
+                    <Route path='/condition' element={<Condition />} />
                     <Route path="/login" element={<Login onLogin={handleLogin}/>} />
                 </Routes>
             ) : (
