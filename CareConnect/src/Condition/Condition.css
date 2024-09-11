@@ -114,8 +114,8 @@ textarea {
     border: 2px solid var(--color-2);
 }
 
-.submit {
-    margin-top: 20px !important;
+.submitButton {
+    margin-top: 40px !important;
     padding: 10px;
     height: 50px;
     width: 165px;
@@ -127,6 +127,8 @@ textarea {
     display: block;
     margin-left: auto;
     margin-right: auto;
+    background-color: var(--color-2);
+    color: var(--color-4);
 }
 
 .success-message {

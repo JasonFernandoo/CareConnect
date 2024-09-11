@@ -349,3 +349,83 @@ body {
   font-size: 24px;
   font-weight: bold;
 }
+
+.progress-booking {
+  position: fixed;
+  bottom: 15px;
+  width: 100%;
+  height: 65px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  animation: slideFadeIn 0.5s ease-out;
+}
+
+.progress {
+  width: 90%;
+  height: 100%;
+  background-color: var(--color-4);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.progress-content {
+  height: 92%;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+}
+
+.progress-img {
+  height: 100%;
+  width: 25%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.progress-img img {
+  height: 45px;
+  width: 45px;
+  border-radius: 50%;
+}
+
+.progress-text {
+  height: 100%;
+  width: 75%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.progress-text h4 {
+  font-size: 14px;
+  margin: 0;
+  padding: 0;
+}
+
+.progress-text p {
+  font-size: 12px;
+  margin: 0;
+  padding: 0;
+  color : #bbbbbb;
+}
+
+.progress-bar {
+  height: 8%;
+  width: 100%;
+  background-color: #24B043;
+}
+
+@keyframes slideFadeIn {
+  0% {
+      transform: translateY(100%);
+      opacity: 0;
+  }
+  100% {
+      transform: translateY(0);
+      opacity: 1;
+  }
+}

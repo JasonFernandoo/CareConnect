@@ -8,10 +8,10 @@ const port = 5000;
 
 const connection = mysql.createConnection({
   host: 'localhost',
-  port: '1234',
+  port: '3305',
   user: 'root',
-  password: 'bbee2e7',
-  database: 'careconnect'
+  password: 'JasonF3205',
+  database: 'CareConnect'
 });
 
 connection.connect(err => {

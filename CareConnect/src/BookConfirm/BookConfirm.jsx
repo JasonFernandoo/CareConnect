@@ -8,13 +8,14 @@ import locationImage from '../assets/location.png';
 
 const GOOGLE_API_KEY = 'AIzaSyCSyGZc-LCUj0tIJ6pSb5ZJwPYlQSbXT48';
 
-function BookConfirm() {
+function BookConfirm({ onBackButtonClick }) {
     const navigate = useNavigate();
     const [latestBooking, setLatestBooking] = useState(null);
     const [coordinates, setCoordinates] = useState(null);
     const [bookedHeight, setBookedHeight] = useState('70%');
     const [errorFetchingCoordinates, setErrorFetchingCoordinates] = useState(false);
     const bookedRef = useRef(null);
+    const mapContainerRef = useRef(null);
 
     useEffect(() => {
         fetchLatestBooking();
@@ -36,7 +37,11 @@ function BookConfirm() {
 
     useEffect(() => {
         const handleClickOutside = (event) => {
-            if (bookedRef.current && !bookedRef.current.contains(event.target)) {
+            if (
+                (bookedRef.current && !bookedRef.current.contains(event.target)) ||
+                (mapContainerRef.current && mapContainerRef.current.contains(event.target))
+            ) {
+                console.log('Clicked outside booked div or on map');
                 setBookedHeight('0');
             }
         };
@@ -45,7 +50,7 @@ function BookConfirm() {
         return () => {
             document.removeEventListener('mousedown', handleClickOutside);
         };
-    }, [bookedRef]);
+    }, [bookedRef, mapContainerRef]);
 
     useEffect(() => {
         const fetchCoordinates = async () => {
@@ -75,13 +80,20 @@ function BookConfirm() {
         fetchCoordinates();
     }, [latestBooking]);
 
+    const handleBackButtonClick = () => {
+        if (typeof onBackButtonClick === 'function') {
+            onBackButtonClick();
+        }
+        navigate('/', { state: { showProgressBooking: true } });
+    };
+
     return (
         <div className="container">
             <div className="confirm-header">
                 <div className="header-atas">
                     <div className="atas-kiri">
                         <div className="profile">
-                            <img src={locationImage} />
+                            <img src={locationImage} alt="location" />
                         </div>
                         <p>Jakarta, Indonesia</p>
                     </div>
@@ -93,12 +105,12 @@ function BookConfirm() {
                     </div>
                 </div>
             </div>
-            <div className="map-container">
+            <div className="map-container" ref={mapContainerRef}>
                 {latestBooking ? (
                     coordinates ? (
                         <LoadScript googleMapsApiKey={GOOGLE_API_KEY}>
                             <GoogleMap
-                                mapContainerStyle={{ height: '100vh', width: '100%' }}
+                                mapContainerStyle={{ height: '91.5vh', width: '100%' }}
                                 center={coordinates}
                                 zoom={15}
                             >
@@ -136,6 +148,9 @@ function BookConfirm() {
                 ) : (
                     <p>No booking data available</p>
                 )}
+            </div>
+            <div className='back-button'>
+                <button onClick={handleBackButtonClick}>Back</button>
             </div>
         </div>
     );

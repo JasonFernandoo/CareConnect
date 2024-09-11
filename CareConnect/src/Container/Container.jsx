@@ -12,6 +12,7 @@ function Container() {
     const navigate = useNavigate();
     const location = useLocation();
     const [showPopup, setShowPopup] = useState(false);
+    const [showProgressBooking, setShowProgressBooking] = useState(false);
 
     useEffect(() => {
         if (location.state?.showPopup) {
@@ -20,6 +21,12 @@ function Container() {
                 setShowPopup(false);
             }, 5000);
             return () => clearTimeout(timer);
+        }
+    }, [location.state]);
+
+    useEffect(() => {
+        if (location.state?.showProgressBooking) {
+            setShowProgressBooking(true);
         }
     }, [location.state]);
 
@@ -96,6 +103,24 @@ function Container() {
                         <img src={mapImage} alt="map"/>
                     </div>
                 </div>
+                {showProgressBooking && (
+                    <div className="progress-booking">
+                        <div className="progress">
+                            <div className='progress-content'>
+                                <div className='progress-img'>
+                                    <img src={bookImage} alt="book"/>
+                                </div>
+                                <div className='progress-text'>
+                                    <h4>Ambulance RS AMC, Sumedang</h4>
+                                    <p>Arriving in 3 minutes</p>
+                                </div>
+                            </div>
+                            <div className="progress-bar">
+                            
+                            </div>
+                        </div>
+                    </div>
+                )}
             </div>
         </div>
     );
