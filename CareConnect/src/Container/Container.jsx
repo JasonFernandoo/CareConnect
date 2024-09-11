@@ -13,6 +13,25 @@ function Container() {
     const location = useLocation();
     const [showPopup, setShowPopup] = useState(false);
     const [showProgressBooking, setShowProgressBooking] = useState(false);
+    const [ambulanceBooking, setAmbulanceBooking] = useState(null);
+
+    useEffect(() => {
+        fetchAmbulanceBooking();
+    }, []);
+
+    const fetchAmbulanceBooking = async () => {
+        try {
+            const response = await fetch('http://localhost:5000/api/bookings');
+            if (!response.ok) {
+                throw new Error('Failed to fetch latest booking');
+            }
+            const data = await response.json();
+            console.log('Fetched booking data:', data);
+            setAmbulanceBooking(data);
+        } catch (error) {
+            console.error('Error fetching latest booking:', error);
+        }
+    };
 
     useEffect(() => {
         if (location.state?.showPopup) {
@@ -103,7 +122,7 @@ function Container() {
                         <img src={mapImage} alt="map"/>
                     </div>
                 </div>
-                {showProgressBooking && (
+                {showProgressBooking && ambulanceBooking && (
                     <div className="progress-booking">
                         <div className="progress">
                             <div className='progress-content'>
@@ -111,7 +130,7 @@ function Container() {
                                     <img src={bookImage} alt="book"/>
                                 </div>
                                 <div className='progress-text'>
-                                    <h4>Ambulance RS AMC, Sumedang</h4>
+                                    <h4>Ambulance {ambulanceBooking.hospitalName}, {ambulanceBooking.location}</h4>
                                     <p>Arriving in 3 minutes</p>
                                 </div>
                             </div>

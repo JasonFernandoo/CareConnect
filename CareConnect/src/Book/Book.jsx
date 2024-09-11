@@ -57,9 +57,9 @@ function Book() {
             <div className="form">
                 <form onSubmit={handleSubmit}>
                     <label htmlFor="location">Location</label>
-                    <input type="text" id="location" name="location" placeholder="Enter location" onChange={handleChange} />
+                    <input type="text" id="location" name="location" placeholder="Enter location" onChange={handleChange} autoComplete='off'/>
                     <label htmlFor="hname">Hospital Name</label>
-                    <input type="text" id="hname" name="hospitalName" placeholder="Enter hospital name (optional)" onChange={handleChange} />
+                    <input type="text" id="hname" name="hospitalName" placeholder="Enter hospital name (optional)" onChange={handleChange} autoComplete='off' />
                     <label htmlFor="type">Emergency Type</label>
                     <select id="type" name="emergencyType" onChange={handleChange}>
                         <option value="" disabled>Select an emergency type</option>
