@@ -14,6 +14,7 @@ function Container() {
     const [showPopup, setShowPopup] = useState(false);
     const [showProgressBooking, setShowProgressBooking] = useState(false);
     const [ambulanceBooking, setAmbulanceBooking] = useState(null);
+    const [animationState, setAnimationState] = useState('idle');
 
     useEffect(() => {
         fetchAmbulanceBooking();
@@ -48,6 +49,14 @@ function Container() {
             setShowProgressBooking(true);
         }
     }, [location.state]);
+
+    const handleProgressBookingClick = () => {
+        setAnimationState('fadeOut');
+        setTimeout(() => {
+            setShowProgressBooking(false);
+            setAnimationState('slideUp');
+        }, 500); 
+    };
 
     return (
         <div className="container">
@@ -138,6 +147,11 @@ function Container() {
                             
                             </div>
                         </div>
+                    </div>
+                )}
+                {animationState === 'slideUp' && (
+                    <div className="new-fixed-div">
+                        <p>New Fixed Div Content</p>
                     </div>
                 )}
             </div>
