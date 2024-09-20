@@ -26,7 +26,7 @@ function Book() {
         e.preventDefault();
         try {
             setButtonClicked(true);
-            const response = await fetch('http://localhost:5000/api/bookings', {
+            const response = await fetch('https://care-connectdb.vercel.app/bookings', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'

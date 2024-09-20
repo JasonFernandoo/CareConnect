@@ -11,8 +11,8 @@ const port = 5000;
 app.use(bodyParser.json());
 app.use(cors());
 
-app.post('/api/bookings', async (req, res) => {
-  console.log('Received a POST request to /api/bookings'); 
+app.post('https://care-connectdb.vercel.app/bookings', async (req, res) => {
+  console.log('Received a POST request to /bookings'); 
 
   let { location, hospitalName, emergencyType, note, nurseAssistance } = req.body;
   if (emergencyType === 'type2') {
@@ -43,7 +43,7 @@ catch (error) {
 
 });
 
-app.get('/api/bookings', async (req, res) => {
+app.get('https://care-connectdb.vercel.app/bookings', async (req, res) => {
   try {
     const latestBooking = await prisma.bookings.findFirst({
       orderBy: {
